@@ -1,0 +1,57 @@
+{
+  "available_delivery_slots": [
+    "19:00-19:30",
+    "19:30-20:00",
+    "20:00-20:30",
+    "21:00-21:30"
+  ],
+  "available_venues": [
+    {
+      "id": "venue1",
+      "name": "Venue 1",
+      "category": "cat 1",
+      "cover": "https://s3.eu-central-1.amazonaws.com/foodracers/food_racers/venues/cover_images/65b/043/46-/medium/_MG_0024.jpeg?1585152493",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+      "freeSlots": [
+        "17:30-18:00",
+        "18:30-19:00",
+        "19:00-19:30",
+        "19:30-20:00",
+        "20:30-21:00",
+        "21:30-22:00"
+      ]
+    },
+    {
+      "id": "venue2",
+      "name": "Venue 2",
+      "category": "cat 2",
+      "cover": "https://s3.eu-central-1.amazonaws.com/foodracers/food_racers/venues/cover_images/65b/043/46-/medium/_MG_0024.jpeg?1585152493",
+      "description": "Lorem ipsum",
+      "freeSlots": ["18:30-19:00", "19:00-19:30", "19:30-20:00", "20:30-21:00"]
+    },
+    {
+      "id": "venue3",
+      "name": "Venue 3",
+      "category": "cat 2",
+      "cover": "https://s3.eu-central-1.amazonaws.com/foodracers/food_racers/venues/cover_images/bdf/1f6/f4-/medium/lanterne_copertina.jpg?1576752032",
+      "description": "Lorem ipsum",
+      "freeSlots": ["18:30-19:00", "20:00-20:30", "20:30-21:00", "22:00-22:30"]
+    },
+    {
+      "id": "venue4",
+      "name": "Venue 4",
+      "category": "cat 3",
+      "cover": "https://s3.eu-central-1.amazonaws.com/foodracers/food_racers/venues/cover_images/9f9/7b6/d2-/medium/angolo_ghiotto_copertina.jpg?1599054725",
+      "description": "Lorem ipsum",
+      "freeSlots": ["19:30-20:00", "20:00-20:30"]
+    },
+    {
+      "id": "venue5",
+      "name": "Venue 5",
+      "category": "cat 2",
+      "cover": "https://s3.eu-central-1.amazonaws.com/foodracers/food_racers/venues/cover_images/796/a94/fb-/medium/funky_go_copertina.jpg?1574433635",
+      "description": "Lorem ipsum",
+      "freeSlots": ["20:00-20:30", "20:30-21:00", "22:00-22:30", "22:30-23:00"]
+    }
+  ]
+}
