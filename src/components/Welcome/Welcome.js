@@ -3,7 +3,7 @@ import "./Welcome.css"
 
 function Welcome(){
   return (
-    <div></div>
+    <div>Welcome</div>
   )
 }
 

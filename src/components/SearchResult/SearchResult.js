@@ -5,7 +5,10 @@ import VenuesList from "../VenuesList/VenuesList"
 
 function SearchResult(){
   return (
-    <div></div>
+    <div>
+      <Error/>
+      <VenuesList/>
+    </div>
   )
 }
 

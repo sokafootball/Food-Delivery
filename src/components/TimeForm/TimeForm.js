@@ -3,7 +3,7 @@ import "./TimeForm.css"
 
 function TimeForm(){
   return (
-    <div></div>
+    <div>TimeForm</div>
   )
 }
 
