@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/rubik/v11/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4iFV0U1.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root{
   --fr-primary: #FA4612;
   --fr-secondary: #006499;
@@ -5,13 +13,16 @@
   --fr-black: #25303B;
   --fr-grey: #8995A1;
   --fr-light-grey: #C5CBD1;
-  --fr-super-light-grey: #03DAC4;
-  --fr-success: #FFE262;
-  --fr-warning: #C62700;
+  --fr-super-light-grey: #F0F2F3;
+  --fr-success: #03DAC4;
+  --fr-warning: #FFE262;
+  --fr-error: #C62700;
+  /* font-family: ; */
 }
 
 .App {
   text-align: center;
+  font-family: "Rubik";
 }
 
 .App-logo {
