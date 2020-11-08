@@ -25,3 +25,10 @@
   flex-direction: column;
   font-family: "Rubik";
 }
+
+#top-div{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}

@@ -9,10 +9,12 @@ import Welcome from '../Welcome/Welcome';
 function App() {
   return (
     <div className="App">
-      <Logo />
-      <Welcome />
-      <Instructions />
-      <TimeForm/>
+      <div id="top-div">
+        <Logo />
+        <Welcome />
+        <Instructions />
+        <TimeForm/>
+      </div>
       <Loader/>
       <SearchResult />
     </div>
