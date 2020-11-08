@@ -1,4 +1,5 @@
 #welcome-msg{
   color: var(--fr-black);
   font-size: 40px;
+  width: 70%;
 }
