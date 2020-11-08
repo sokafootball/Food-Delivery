@@ -17,10 +17,8 @@
   --fr-success: #03DAC4;
   --fr-warning: #FFE262;
   --fr-error: #C62700;
-  /* font-family: ; */
 }
 
 .App {
-  text-align: center;
   font-family: "Rubik";
 }
