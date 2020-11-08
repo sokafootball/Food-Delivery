@@ -1,3 +1,15 @@
+:root{
+  --fr-primary: #FA4612;
+  --fr-secondary: #006499;
+  --fr-tertiary: #FA9012;
+  --fr-black: #25303B;
+  --fr-grey: #8995A1;
+  --fr-light-grey: #C5CBD1;
+  --fr-super-light-grey: #03DAC4;
+  --fr-success: #FFE262;
+  --fr-warning: #C62700;
+}
+
 .App {
   text-align: center;
 }

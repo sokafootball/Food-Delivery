@@ -3,7 +3,7 @@ import "./Welcome.css"
 
 function Welcome(){
   return (
-    <div>Welcome</div>
+    <div id="welcome-msg">Ciao, a che ora desideri ricevere l'ordine?</div>
   )
 }
 
