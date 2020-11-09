@@ -13,6 +13,9 @@ function App() {
   const [currentTime, setCurrentTime] = useState({hours: new Date().getHours(), minutes: new Date().getMinutes()})
   const [deliverySlots, setDeliverySlots] = useState([])
   const [venues, setVenues] = useState([])
+  const [noResults, setNoResults] = useState(false)
+
+  const minMinutesOfDelay = 20
 
   const handleTimeFormChange = (e) => {
     let { name, value } = e.target
@@ -41,13 +44,27 @@ function App() {
   }
 
   const searchForVenues = () => {
+    const currentTimeInMinutes = currentTime.hours * 60 + currentTime.minutes
+    const orderTimeInMinutes = parseInt(orderTime.hours) * 60 + parseInt(orderTime.minutes)
+    if ((orderTimeInMinutes - currentTimeInMinutes) < minMinutesOfDelay) setNoResults(true)
+    else{
+      const orderTimeString = `${orderTime.hours}:${orderTime.minutes}`
+      checkForDeliverySlots(orderTimeString)
+    }
+  }
 
+  const checkForDeliverySlots = orderTimeString => {
+    const formattedDeliverySlots = deliverySlots.map(slot => slot.split("-"))
+    return formattedDeliverySlots.some(slot => {
+      return (orderTimeString >= slot[0] && orderTimeString <= slot[1])
+    })
   }
 
   useEffect(() => {
+    setNoResults(false)
     setCurrentTime({hours: new Date().getHours(), minutes: new Date().getMinutes()})
-    console.log(venues)
-    console.log(deliverySlots)
+    // console.log(venues)
+    // console.log(deliverySlots)
     searchForVenues()
   },[orderTime])
 
