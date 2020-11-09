@@ -11,6 +11,7 @@ input[type=number] {
 }
 
 span{
+  align-self: center;
   color: var(--fr-black);
   font-family: "Rubik";
   font-size: 25px;
