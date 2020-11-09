@@ -17,8 +17,24 @@ span{
   font-size: 25px;
 }
 
+#clock-icon-div{
+  padding-top: 2px;
+}
+
+#clock-icon{
+  height: 2.5ch;
+  width: 2.5ch;
+}
+
 #time-form-div{
+  align-items: center;
+  border: var(--fr-light-grey) solid;
+  box-sizing:border-box;
   display: flex;
+  justify-content: space-between;
+  height: 80px;
+  margin-top: 100px;
+  padding: 5px 15px;
   width: 100%;
 }
 

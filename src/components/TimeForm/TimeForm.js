@@ -1,5 +1,6 @@
 import React from "react"
 import "./TimeForm.css"
+import clockIcon from "./clock-icon.png"
 
 function TimeForm(props){
   return (
@@ -25,6 +26,7 @@ function TimeForm(props){
           value={props.orderTime.minutes}
         ></input>
       </div>
+      <img id="clock-icon" alt="" src={clockIcon}></img>
     </div>
   )
 }
