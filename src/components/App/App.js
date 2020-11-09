@@ -9,10 +9,13 @@ import Welcome from '../Welcome/Welcome';
 
 function App() {
 
-  const [orderTime, setOrderTime] = useState({hours:"00", minutes:"00"})
+  const [orderTime, setOrderTime] = useState({hours:"", minutes:""})
 
   const handleTimeFormChange = (e) => {
-    const { name, value } = e.target
+    let { name, value } = e.target
+    value = name === "hours" ? Math.min(value,23) : Math.min(value,59)
+    value = Math.max(value,0)
+    value = value === "00" ? "00" : value
     setOrderTime({ ...orderTime,[name]:value })
   }
 
