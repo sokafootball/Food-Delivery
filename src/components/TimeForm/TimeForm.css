@@ -9,10 +9,23 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
 span{
   color: var(--fr-black);
   font-family: "Rubik";
   font-size: 25px;
+}
+
+#time-form-div{
+  display: flex;
+  width: 100%;
+}
+
+#time-form-input-div{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 15%;
 }
 
 .time-form-input{
@@ -21,6 +34,7 @@ span{
   font-family: "Rubik";
   font-size: 28px;
   font-weight: bold;
+  width: 2ch;
 }
 
 .time-form-input:focus{
