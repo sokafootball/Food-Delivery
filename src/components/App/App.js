@@ -9,11 +9,11 @@ import Welcome from '../Welcome/Welcome';
 
 function App() {
 
-  const [orderTime, setOrderTime] = useState("00")
+  const [orderTime, setOrderTime] = useState({hours:"00", minutes:"00"})
 
   const handleTimeFormChange = (e) => {
-    const { value } = e.target
-    setOrderTime({ value })
+    const { name, value } = e.target
+    setOrderTime({ ...orderTime,[name]:value })
   }
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function App() {
         <Instructions />
         <TimeForm
           handleTimeFormChange={handleTimeFormChange}
-          time={orderTime}
+          orderTime={orderTime}
         />
       </div>
       <Loader/>

@@ -9,14 +9,23 @@ function TimeForm(props){
           id="time-form-hours"
           className="time-form-input"
           type="number"
-          name="orderTime"
+          name="hours"
           min="00"
           max="23"
           onChange={(e) => props.handleTimeFormChange(e)}
-          value={props.orderTime}
+          value={props.orderTime.hours}
         ></input>
         <span>:</span>
-        <input id="time-form-minutes" className="time-form-input" type="number" min="00" max="59"></input>
+        <input
+          id="time-form-hours"
+          className="time-form-input"
+          type="number"
+          name="minutes"
+          min="00"
+          max="59"
+          onChange={(e) => props.handleTimeFormChange(e)}
+          value={props.orderTime.minutes}
+        ></input>
       </div>
     </div>
   )
