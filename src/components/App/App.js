@@ -9,12 +9,16 @@ import Welcome from '../Welcome/Welcome';
 
 function App() {
 
-  const [orderTime, setOrderTime] = useState([])
+  const [orderTime, setOrderTime] = useState("00")
 
-  const handleFormChange = (e) => {
-    const { time } = e.target
-    setOrderTime({ time })
+  const handleTimeFormChange = (e) => {
+    const { value } = e.target
+    setOrderTime({ value })
   }
+
+  useEffect(() => {
+    console.log(orderTime)
+  },[orderTime])
 
   return (
     <div className="App">
@@ -23,7 +27,8 @@ function App() {
         <Welcome />
         <Instructions />
         <TimeForm
-          handleFormChange={handleFormChange}
+          handleTimeFormChange={handleTimeFormChange}
+          time={orderTime}
         />
       </div>
       <Loader/>

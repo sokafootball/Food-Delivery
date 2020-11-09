@@ -1,13 +1,22 @@
 import React from "react"
 import "./TimeForm.css"
 
-function TimeForm(){
+function TimeForm(props){
   return (
     <div id="time-form-div">
       <div id="time-form-input-div">
-        <input id="time-form-hours" class="time-form-input" type="number" min="00" max="23"></input>
+        <input
+          id="time-form-hours"
+          className="time-form-input"
+          type="number"
+          name="orderTime"
+          min="00"
+          max="23"
+          onChange={(e) => props.handleTimeFormChange(e)}
+          value={props.orderTime}
+        ></input>
         <span>:</span>
-        <input id="time-form-minutes" class="time-form-input" type="number" min="00" max="59"></input>
+        <input id="time-form-minutes" className="time-form-input" type="number" min="00" max="59"></input>
       </div>
     </div>
   )
