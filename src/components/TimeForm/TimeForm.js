@@ -4,8 +4,11 @@ import "./TimeForm.css"
 function TimeForm(){
   return (
     <div id="time-form-div">
-      <input id="time-form-hours" type="number" min="00" max="23"></input>
-      <input id="time-form-minutes" type="number" min="00" max="59"></input>
+      <div id="time-form-input-div">
+        <input id="time-form-hours" class="time-form-input" type="number" min="00" max="23"></input>
+        <span>:</span>
+        <input id="time-form-minutes" class="time-form-input" type="number" min="00" max="59"></input>
+      </div>
     </div>
   )
 }

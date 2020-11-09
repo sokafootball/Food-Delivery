@@ -9,3 +9,12 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.time-form-input{
+  border: none;
+  font-family: "Rubik";
+}
+
+.time-form-input:focus{
+  outline: none;
+}
