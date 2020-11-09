@@ -11,6 +11,8 @@ function App() {
 
   const [orderTime, setOrderTime] = useState({hours:"", minutes:""})
   const [currentTime, setCurrentTime] = useState({hours: new Date().getHours(), minutes: new Date().getMinutes()})
+  const [deliverySlots, setDeliverySlots] = useState([])
+  const [venues, setVenues] = useState([])
 
   const handleTimeFormChange = (e) => {
     let { name, value } = e.target
@@ -31,10 +33,28 @@ function App() {
     return input
   }
 
+  const getData = async () => {
+    let deliverySlots = await fetch("http://localhost:3004/available_delivery_slots").then(data => data.json())
+    let availableVenues = await fetch("http://localhost:3004/available_venues").then(data => data.json())
+    setDeliverySlots(deliverySlots)
+    setVenues(availableVenues)
+  }
+
+  const searchForVenues = () => {
+
+  }
+
   useEffect(() => {
     setCurrentTime({hours: new Date().getHours(), minutes: new Date().getMinutes()})
-    console.log(currentTime)
+    console.log(venues)
+    console.log(deliverySlots)
+    searchForVenues()
   },[orderTime])
+
+  useEffect(() => {
+    getData()
+  }, [])
+
 
   return (
     <div className="App">
@@ -48,7 +68,10 @@ function App() {
         />
       </div>
       <Loader/>
-      <SearchResult />
+      <SearchResult
+        orderTime={orderTime}
+        currentTime={currentTime}
+      />
     </div>
   );
 

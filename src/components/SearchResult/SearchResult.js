@@ -3,7 +3,7 @@ import "./SearchResult.css"
 import Error from "../Error/Error"
 import VenuesList from "../VenuesList/VenuesList"
 
-function SearchResult(){
+function SearchResult(props){
   return (
     <div>
       <Error/>
