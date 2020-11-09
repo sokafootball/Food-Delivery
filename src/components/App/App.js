@@ -13,14 +13,25 @@ function App() {
 
   const handleTimeFormChange = (e) => {
     let { name, value } = e.target
-    value = name === "hours" ? Math.min(value,23) : Math.min(value,59)
-    value = Math.max(value,0)
-    value = value === "00" ? "00" : value
+    value = cleanInput(value , name)
     setOrderTime({ ...orderTime,[name]:value })
   }
 
+  const cleanInput = (input, type) => {
+    input = input.replace(/[^0-9]/g,"")
+    input = input.length > 2 ? input.slice(0,2) : input
+    if (type === "hours") {
+      input = input > 23 ? "23" : input
+    }
+    else if (type === "minutes") {
+      input = input > 59 ? "59" : input
+    }
+    input = input < 0 ? "0" : input
+    return input
+  }
+
   useEffect(() => {
-    console.log(orderTime)
+    console.log(typeof(orderTime.hours))
   },[orderTime])
 
   return (

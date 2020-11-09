@@ -40,9 +40,10 @@ span{
 
 #time-form-input-div{
   display: flex;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
-  width: 15%;
+  width: 10%;
 }
 
 .time-form-input{
@@ -57,3 +58,4 @@ span{
 .time-form-input:focus{
   outline: none;
 }
+
