@@ -10,6 +10,7 @@ import Welcome from '../Welcome/Welcome';
 function App() {
 
   const [orderTime, setOrderTime] = useState({hours:"", minutes:""})
+  const [currentTime, setCurrentTime] = useState({hours: new Date().getHours(), minutes: new Date().getMinutes()})
 
   const handleTimeFormChange = (e) => {
     let { name, value } = e.target
@@ -31,7 +32,8 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(typeof(orderTime.hours))
+    setCurrentTime({hours: new Date().getHours(), minutes: new Date().getMinutes()})
+    console.log(currentTime)
   },[orderTime])
 
   return (
