@@ -2,5 +2,6 @@
   color: var(--fr-black);
   font-size: 65px;
   font-weight: bold;
-  text-align: justify;
+  text-align: left;
+  width: 100%;
 }
