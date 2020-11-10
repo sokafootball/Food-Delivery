@@ -6,9 +6,25 @@ import VenuesList from "../VenuesList/VenuesList"
 
 function SearchResult(props){
 
+  let componentToRender
+  switch(props.loadingStatus){
+    case props.loadingStates.loading:
+      componentToRender = <Loader />
+      break
+    case props.loadingStates.error:
+      componentToRender = <Error />
+      break
+    case props.loadingStates.loaded:
+      componentToRender = <VenuesList availableVenues={props.availableVenues}/>
+      break
+
+    default:
+      break
+  }
+
   return (
     <div id="search-result-div">
-      {props.availableVenues.length > 0 ? <VenuesList availableVenues={props.availableVenues}/> : <Error/>}
+      {componentToRender}
     </div>
   )
 }

@@ -1,7 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
 import Instructions from '../Instructions/Instructions';
-import Loader from '../Loader/Loader';
 import Logo from '../Logo/Logo';
 import SearchResult from '../SearchResult/SearchResult';
 import TimeForm from '../TimeForm/TimeForm';
@@ -56,7 +55,6 @@ function App() {
     else{
       const orderTimeString = `${orderTime.hours}:${orderTime.minutes}`
       const compatibleDeliverySlot = checkForDeliverySlots(orderTimeString)
-      //console.log(compatibleDeliverySlot)
       if (compatibleDeliverySlot !== undefined) filterVenues(compatibleDeliverySlot)
       else setLoadingStatus(loadingStates.error)
     }
@@ -70,20 +68,14 @@ function App() {
   }
 
   const filterVenues = compatibleDeliverySlot => {
-    console.log(`delivery slot: ${compatibleDeliverySlot}`)
     const compatibleVenues = venues.filter(venue => {
       return venue.freeSlots.some(slot => {
-        console.log(`checking slot ${slot} of ${venue.name}`)
-        console.log(`checking if there is a match between ${compatibleDeliverySlot[0]} and ${slot.split("-")[1]}`)
-        console.log(slot.split("-")[1] === compatibleDeliverySlot[0])
         return slot.split("-")[1] === compatibleDeliverySlot[0]
       })
     })
-    console.log(`found these venues: ${compatibleVenues.map(venue => venue.name)}`)
     compatibleVenues.length !== 0 ? setLoadingStatus(loadingStates.loaded) : setLoadingStatus(loadingStates.error)
     setAvailableVenues(compatibleVenues)
   }
-
 
   useEffect(() => {
     setAvailableVenues([])
@@ -91,18 +83,12 @@ function App() {
     setTimeout(() => {
       setCurrentTime({hours: new Date().getHours(), minutes: new Date().getMinutes()})
       searchForVenues()
-
-
-    }, 2000);
+    }, 500);
   },[orderTime])
 
   useEffect(() => {
     getData()
   }, [])
-
-  useEffect(() => {
-
-  },[availableVenues])
 
   return (
     <div className="App">
@@ -115,11 +101,12 @@ function App() {
           orderTime={orderTime}
         />
       </div>
-        <p>{loadingStatus}</p>
       <SearchResult
         orderTime={orderTime}
         currentTime={currentTime}
         availableVenues={availableVenues}
+        loadingStatus={loadingStatus}
+        loadingStates={loadingStates}
       />
     </div>
   );
