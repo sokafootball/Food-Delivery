@@ -4,7 +4,7 @@ import VenueCard from "../VenueCard/VenueCard"
 
 function VenuesList(props){
 
-  const venueCards = props.availableVenues.map((venue, idx) => {
+  const venueCards = props.availableVenues.map((venue, idx) =>
     <VenueCard
       key={idx}
       name={venue.name}
@@ -12,7 +12,7 @@ function VenuesList(props){
       cover={venue.cover}
       category={venue.category}
     />
-  })
+  )
 
   return (
     <div>{venueCards}</div>
