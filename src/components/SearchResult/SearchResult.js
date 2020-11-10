@@ -17,13 +17,13 @@ function SearchResult(props){
     case props.loadingStates.loaded:
       componentToRender = <VenuesList availableVenues={props.availableVenues}/>
       break
-
     default:
       break
   }
 
   return (
     <div id="search-result-div">
+      {/* <Loader/> */}
       {componentToRender}
     </div>
   )
