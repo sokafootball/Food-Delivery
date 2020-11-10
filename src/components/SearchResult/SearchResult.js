@@ -18,12 +18,12 @@ function SearchResult(props){
       componentToRender = <VenuesList availableVenues={props.availableVenues}/>
       break
     default:
+      componentToRender = <p></p>
       break
   }
 
   return (
     <div id="search-result-div">
-      {/* <Loader/> */}
       {componentToRender}
     </div>
   )

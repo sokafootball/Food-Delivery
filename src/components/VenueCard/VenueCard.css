@@ -19,7 +19,7 @@
 #card-text{
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   margin-left: 20px;
   padding-top: 10px;
 }

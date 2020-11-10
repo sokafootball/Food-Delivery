@@ -1,6 +1,6 @@
 import React from "react"
 import "./Loader.css"
-import pizzaImg from "./pizza.png"
+import pizzaImg from "../../pizza.png"
 
 function Loader(){
   return (
