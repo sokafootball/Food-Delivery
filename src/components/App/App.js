@@ -75,9 +75,11 @@ function App() {
 
 
   useEffect(() => {
-    setNoResults(false)
-    setCurrentTime({hours: new Date().getHours(), minutes: new Date().getMinutes()})
-    searchForVenues()
+    setTimeout(() => {
+      setNoResults(false)
+      setCurrentTime({hours: new Date().getHours(), minutes: new Date().getMinutes()})
+      searchForVenues()
+    }, 500);
   },[orderTime])
 
   useEffect(() => {
