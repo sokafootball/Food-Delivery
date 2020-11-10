@@ -17,7 +17,6 @@ function App() {
   const [noResults, setNoResults] = useState(false)
 
   const minMinutesOfDelayUser = 20
-  const minMinutesOfDelayVenue = 30
 
   const handleTimeFormChange = (e) => {
     let { name, value } = e.target
@@ -52,7 +51,7 @@ function App() {
     else{
       const orderTimeString = `${orderTime.hours}:${orderTime.minutes}`
       const compatibleDeliverySlot = checkForDeliverySlots(orderTimeString)
-      console.log(`delivery slot found : ${compatibleDeliverySlot}`)
+      console.log(compatibleDeliverySlot)
       if (compatibleDeliverySlot === undefined) setNoResults(true)
       else filterVenues(compatibleDeliverySlot)
     }
@@ -71,7 +70,6 @@ function App() {
         return slot.split("-")[1] === compatibleDeliverySlot[0]
       })
     })
-    console.log(`compatibleVenues found : ${JSON.stringify(compatibleVenues)}`)
     setAvailableVenues(compatibleVenues)
   }
 
@@ -79,8 +77,6 @@ function App() {
   useEffect(() => {
     setNoResults(false)
     setCurrentTime({hours: new Date().getHours(), minutes: new Date().getMinutes()})
-    // console.log(venues)
-    // console.log(deliverySlots)
     searchForVenues()
   },[orderTime])
 
@@ -104,6 +100,7 @@ function App() {
       <SearchResult
         orderTime={orderTime}
         currentTime={currentTime}
+        availableVenues={availableVenues}
       />
     </div>
   );
