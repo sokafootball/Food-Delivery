@@ -6,7 +6,7 @@ import VenuesList from "../VenuesList/VenuesList"
 function SearchResult(props){
 
   return (
-    <div>
+    <div id="search-result-div">
       {props.availableVenues.length > 0 ? <VenuesList availableVenues={props.availableVenues}/> : <Error/>}
     </div>
   )

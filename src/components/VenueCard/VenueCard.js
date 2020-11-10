@@ -6,9 +6,9 @@ function VenueCard(props){
     <div id="card-div">
       <img id="cover" src={props.cover} alt="Venue cover"></img>
       <div id="card-text">
-        <p id="description">{props.description}</p>
+        <p id="category">{props.category.toUpperCase()}</p>
         <p id="name">{props.name}</p>
-        <p id="category">{props.category}</p>
+        <p id="description">{props.description}</p>
       </div>
     </div>
   )
