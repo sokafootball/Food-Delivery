@@ -2,9 +2,10 @@ import React from "react"
 import "./VenuesList.css"
 import VenueCard from "../VenueCard/VenueCard"
 
-function VenuesList(){
+function VenuesList(props){
+
   return (
-    <div></div>
+    <div>venues</div>
   )
 }
 

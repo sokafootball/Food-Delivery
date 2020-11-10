@@ -47,12 +47,12 @@ function App() {
   const searchForVenues = () => {
     const currentTimeInMinutes = currentTime.hours * 60 + currentTime.minutes
     const orderTimeInMinutes = parseInt(orderTime.hours) * 60 + parseInt(orderTime.minutes)
-    if ((orderTimeInMinutes - currentTimeInMinutes) < minMinutesOfDelayUser) setNoResults(true)
+    if ((orderTimeInMinutes - currentTimeInMinutes) < minMinutesOfDelayUser) console.log("no available deliveries")
     else{
       const orderTimeString = `${orderTime.hours}:${orderTime.minutes}`
       const compatibleDeliverySlot = checkForDeliverySlots(orderTimeString)
       console.log(compatibleDeliverySlot)
-      if (compatibleDeliverySlot === undefined) setNoResults(true)
+      if (compatibleDeliverySlot === undefined) console.log("no available deliveries")
       else filterVenues(compatibleDeliverySlot)
     }
   }
@@ -65,20 +65,27 @@ function App() {
   }
 
   const filterVenues = compatibleDeliverySlot => {
+    console.log(`delivery slot: ${compatibleDeliverySlot}`)
     const compatibleVenues = venues.filter(venue => {
       return venue.freeSlots.some(slot => {
+        console.log(`checking slot ${slot} of ${venue.name}`)
+        console.log(`checking if there is a match between ${compatibleDeliverySlot[0]} and ${slot.split("-")[1]}`)
+        console.log(slot.split("-")[1] === compatibleDeliverySlot[0])
         return slot.split("-")[1] === compatibleDeliverySlot[0]
       })
     })
+    console.log(`found these venues: ${compatibleVenues.map(venue => venue.name)}`)
     setAvailableVenues(compatibleVenues)
   }
 
 
   useEffect(() => {
+    setAvailableVenues([])
     setTimeout(() => {
       setNoResults(false)
       setCurrentTime({hours: new Date().getHours(), minutes: new Date().getMinutes()})
       searchForVenues()
+      console.log(`available venues in state: ${availableVenues.length}`)
     }, 500);
   },[orderTime])
 

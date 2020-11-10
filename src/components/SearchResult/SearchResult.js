@@ -4,10 +4,10 @@ import Error from "../Error/Error"
 import VenuesList from "../VenuesList/VenuesList"
 
 function SearchResult(props){
+
   return (
     <div>
-      <Error/>
-      <VenuesList/>
+      {props.availableVenues.length > 0 ? <VenuesList availableVenues={props.availableVenues}/> : <Error/>}
     </div>
   )
 }
