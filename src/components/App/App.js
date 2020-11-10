@@ -14,9 +14,14 @@ function App() {
   const [deliverySlots, setDeliverySlots] = useState([])
   const [venues, setVenues] = useState([])
   const [availableVenues, setAvailableVenues] = useState([])
-  const [noResults, setNoResults] = useState(false)
+  const [loadingStatus, setLoadingStatus] = useState("")
 
   const minMinutesOfDelayUser = 20
+  const loadingStates = {
+    loading: "loading",
+    loaded: "loaded",
+    error: "error"
+  }
 
   const handleTimeFormChange = (e) => {
     let { name, value } = e.target
@@ -47,13 +52,13 @@ function App() {
   const searchForVenues = () => {
     const currentTimeInMinutes = currentTime.hours * 60 + currentTime.minutes
     const orderTimeInMinutes = parseInt(orderTime.hours) * 60 + parseInt(orderTime.minutes)
-    if ((orderTimeInMinutes - currentTimeInMinutes) < minMinutesOfDelayUser) console.log("no available deliveries")
+    if ((orderTimeInMinutes - currentTimeInMinutes) < minMinutesOfDelayUser) setLoadingStatus(loadingStates.error)
     else{
       const orderTimeString = `${orderTime.hours}:${orderTime.minutes}`
       const compatibleDeliverySlot = checkForDeliverySlots(orderTimeString)
-      console.log(compatibleDeliverySlot)
-      if (compatibleDeliverySlot === undefined) console.log("no available deliveries")
-      else filterVenues(compatibleDeliverySlot)
+      //console.log(compatibleDeliverySlot)
+      if (compatibleDeliverySlot !== undefined) filterVenues(compatibleDeliverySlot)
+      else setLoadingStatus(loadingStates.error)
     }
   }
 
@@ -75,24 +80,29 @@ function App() {
       })
     })
     console.log(`found these venues: ${compatibleVenues.map(venue => venue.name)}`)
+    compatibleVenues.length !== 0 ? setLoadingStatus(loadingStates.loaded) : setLoadingStatus(loadingStates.error)
     setAvailableVenues(compatibleVenues)
   }
 
 
   useEffect(() => {
     setAvailableVenues([])
+    setLoadingStatus(loadingStates.loading)
     setTimeout(() => {
-      setNoResults(false)
       setCurrentTime({hours: new Date().getHours(), minutes: new Date().getMinutes()})
       searchForVenues()
-      console.log(`available venues in state: ${availableVenues.length}`)
-    }, 500);
+
+
+    }, 2000);
   },[orderTime])
 
   useEffect(() => {
     getData()
   }, [])
 
+  useEffect(() => {
+
+  },[availableVenues])
 
   return (
     <div className="App">
@@ -105,7 +115,7 @@ function App() {
           orderTime={orderTime}
         />
       </div>
-      <Loader/>
+        <p>{loadingStatus}</p>
       <SearchResult
         orderTime={orderTime}
         currentTime={currentTime}
