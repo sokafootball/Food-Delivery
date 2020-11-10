@@ -15,7 +15,7 @@ function VenuesList(props){
   )
 
   return (
-    <div>{venueCards}</div>
+    <div id="cards-div">{venueCards}</div>
   )
 }
 

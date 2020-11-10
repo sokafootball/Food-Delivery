@@ -1,0 +1,16 @@
+#card-div{
+  display: flex;
+  justify-content: left;
+  margin: 40px 0px;
+  width: 75%;
+}
+
+#card-text{
+  display: flex;
+  flex-direction: column;
+}
+
+#cover{
+  height: 200px;
+  width: 200px;
+}

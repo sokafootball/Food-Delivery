@@ -4,10 +4,12 @@ import "./VenueCard.css"
 function VenueCard(props){
   return (
     <div id="card-div">
-      <img src={props.cover} alt="Venue cover"></img>
-      <p>{props.description}</p>
-      <p>{props.name}</p>
-      <p>{props.category}</p>
+      <img id="cover" src={props.cover} alt="Venue cover"></img>
+      <div id="card-text">
+        <p id="description">{props.description}</p>
+        <p id="name">{props.name}</p>
+        <p id="category">{props.category}</p>
+      </div>
     </div>
   )
 }
