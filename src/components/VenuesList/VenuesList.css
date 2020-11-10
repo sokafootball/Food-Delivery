@@ -3,6 +3,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-top: 50px;
+  margin-top: 40px;
   width: 100%;
+}
+
+#venues-list-div{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  align-items: center;
+}
+
+#cards-list-header{
+  color: var(--fr-black);
+  font-size: 47px;
 }
