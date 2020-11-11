@@ -31,14 +31,4 @@ function TimeForm(props){
   )
 }
 
-//fare un text input che deve avere il formato HH:MM
-  //è un component fatto di input-numero string(:) input-numero
-  //HH deve andare da 00 a 23
-  //MM deve andare da 00 a 60
-//ad avvio applicazione salvare in state la data attuale ed estrarre in una variabile il numero
- //di minuti passati dall'inizio del giorno moltiplicando getHour per il numero corretto di minuti
-//quando utente modifica input salvare nello state il numero di minuti passati dall'inizio del giorno
-  //
-//EXTRA: ricontrollare ora locale ogni volta che modifica
-
 export default TimeForm
