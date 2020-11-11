@@ -51,18 +51,12 @@ function App() {
   const searchForVenues = () => {
     const currentTimeInMinutes = currentTime.hours * 60 + currentTime.minutes
     const orderTimeInMinutes = parseInt(orderTime.hours) * 60 + parseInt(orderTime.minutes)
-    // if ((orderTimeInMinutes - currentTimeInMinutes) < minMinutesOfDelayUser) setLoadingStatus(loadingStates.error)
-    // else{
-    //   const orderTimeString = `${orderTime.hours}:${orderTime.minutes}`
-    //   const compatibleDeliverySlot = checkForDeliverySlots(orderTimeString)
-    //   if (compatibleDeliverySlot !== undefined) filterVenues(compatibleDeliverySlot)
-    //   else setLoadingStatus(loadingStates.error)
-    // }
-    if (!(orderTimeInMinutes - currentTimeInMinutes) < minMinutesOfDelayUser){
+    if ((orderTimeInMinutes - currentTimeInMinutes) < minMinutesOfDelayUser) setLoadingStatus(loadingStates.error)
+    else{
       const orderTimeString = `${orderTime.hours}:${orderTime.minutes}`
       const compatibleDeliverySlot = checkForDeliverySlots(orderTimeString)
       if (compatibleDeliverySlot !== undefined) filterVenues(compatibleDeliverySlot)
-      // else setLoadingStatus(loadingStates.error)
+      else setLoadingStatus(loadingStates.error)
     }
   }
 
@@ -79,7 +73,7 @@ function App() {
         return slot.split("-")[1] === compatibleDeliverySlot[0]
       })
     })
-    // compatibleVenues.length !== 0 ? setLoadingStatus(loadingStates.loaded) : setLoadingStatus(loadingStates.error)
+    compatibleVenues.length !== 0 ? setLoadingStatus(loadingStates.loaded) : setLoadingStatus(loadingStates.error)
     setAvailableVenues(compatibleVenues)
   }
 
@@ -97,12 +91,6 @@ function App() {
     getData()
   }, [])
 
-
-
-  useEffect(() => {
-    console.log("available venues ha changed, its length is " + availableVenues.length)
-    availableVenues.length !== 0 ? setLoadingStatus(loadingStates.loaded) : setLoadingStatus(loadingStates.error)
-  }, [availableVenues])
 
   return (
     <div className="App">
