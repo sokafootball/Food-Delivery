@@ -1,17 +1,26 @@
 import React from "react"
 import "./VenuesList.css"
 import VenueCard from "../VenueCard/VenueCard"
+const maxDescriptionLength = 40
 
 function VenuesList(props){
 
-  const venueCards = props.availableVenues.map((venue) =>
-    <VenueCard
+  const venueCards = props.availableVenues.map((venue) => {
+
+    let description = venue.description.length > maxDescriptionLength
+      ? `${venue.description.slice(0, maxDescriptionLength)}...`
+      : venue.description
+
+    return <VenueCard
       key={venue.id}
       name={venue.name}
-      description={venue.description}
+      description={description}
       cover={venue.cover}
       category={venue.category}
     />
+  }
+
+
   )
 
   return (

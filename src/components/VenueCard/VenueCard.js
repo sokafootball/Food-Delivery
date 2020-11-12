@@ -1,7 +1,13 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "./VenueCard.css"
 
 function VenueCard(props){
+  let description = props.description
+
+  // useEffect(() => {
+  //   description = description.length > 20 ? `${description.slice(0, 20)}...` : description
+  // },[])
+
   return (
     <div id="card-div">
       <img id="cover" src={props.cover} alt="Venue cover"></img>
