@@ -7,4 +7,3 @@ TODO
 - refactor code so that check for no result happens in one place
 - fix error showing sometimes before result
   - add debounce
-- add media query for smaller screen
