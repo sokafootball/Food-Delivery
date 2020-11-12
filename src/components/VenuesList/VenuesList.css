@@ -17,4 +17,5 @@
 #cards-list-header{
   color: var(--fr-black);
   font-size: 47px;
+  text-align: center;
 }

@@ -47,3 +47,25 @@
   font-size: 25px;
   margin: 0px;
 }
+
+@media screen and (max-width: 1300px){
+  #card-div{
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    justify-content: space-between;
+  }
+
+  #description{
+    visibility: hidden;
+  }
+
+  #card-text{
+    align-items: center;
+    margin-top: 20px;
+    height: 100px;
+    width: 230px;
+  }
+
+}

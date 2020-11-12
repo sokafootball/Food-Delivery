@@ -1,12 +1,7 @@
-import React, { useEffect } from "react"
+import React from "react"
 import "./VenueCard.css"
 
 function VenueCard(props){
-  let description = props.description
-
-  // useEffect(() => {
-  //   description = description.length > 20 ? `${description.slice(0, 20)}...` : description
-  // },[])
 
   return (
     <div id="card-div">
@@ -21,9 +16,3 @@ function VenueCard(props){
 }
 
 export default VenueCard
-
-// key={idx}
-// name={venue.name}
-// description={venue.description}
-// cover={venue.cover}
-// category={venue.category}
