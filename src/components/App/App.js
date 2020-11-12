@@ -84,7 +84,7 @@ function App() {
     setTimeout(() => {
       setCurrentTime({hours: new Date().getHours(), minutes: new Date().getMinutes()})
       searchForVenues()
-    }, 2000);
+    }, 500);
   },[orderTime])
 
   useEffect(() => {
