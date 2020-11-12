@@ -4,7 +4,7 @@ import logo from "./logo.png"
 
 function Logo(){
   return (
-    <img src={logo} alt="Company logo"/>
+    <img id="logo-img" src={logo} alt="Company logo"/>
   )
 }
 
