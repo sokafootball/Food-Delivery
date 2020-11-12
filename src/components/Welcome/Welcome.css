@@ -5,3 +5,9 @@
   text-align: left;
   width: 100%;
 }
+
+@media screen and (max-width: 1300px){
+  #welcome-msg{
+    text-align: center;
+  }
+}

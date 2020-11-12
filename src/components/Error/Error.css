@@ -13,4 +13,5 @@
 #error-msg{
   color: var(--fr-error);
   margin-top: 50px;
+  text-align: center;
 }
