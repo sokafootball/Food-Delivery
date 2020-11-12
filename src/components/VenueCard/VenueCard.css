@@ -2,11 +2,9 @@
   box-sizing:border-box;
   border:9px solid transparent;
   display: flex;
-  flex-shrink: 0;
   justify-content: left;
   margin: 40px 0px;
   padding: 26px 16px;
-  /* width: 50%; */
   width: 950px;
   height: 300px;
 }
@@ -26,7 +24,7 @@
 }
 
 #cover{
-  --cover-size: 250px;
+  --cover-size: 230px;
   height: var(--cover-size);
   width: var(--cover-size);
 }
